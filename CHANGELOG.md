@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.1.1 (2023-11-02)
+
+### Fix
+
+- Add missed http_parser (#3) ([`8a905f3`](https://github.com/bdraco/aiohttp-zlib-ng/commit/8a905f33300e8b684724217bf0d53f5241e99bad))
+
 ## v0.1.0 (2023-11-02)
 
 ### Feature
