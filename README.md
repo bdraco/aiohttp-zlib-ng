@@ -35,11 +35,25 @@
 
 Enable zlib_ng on aiohttp
 
+zlib is be a bottleneck for aiohttp, especially for websocket connections. `aiohttp-zlib-ng` replaces usage of `zlib` in `aiohttp` with `zlib-ng` which is a drop-in faster replacement.
+
 ## Installation
 
 Install this via pip (or your favourite package manager):
 
 `pip install aiohttp-zlib-ng`
+
+## Usage
+
+Importing the module is enough to enable [zlib-ng](https://github.com/pycompression/python-zlib-ng) support in aiohttp.
+
+```python
+
+import aiohttp_zlib_ng
+
+aiohttp_zlib_ng.disable_zlib_ng()
+aiohttp_zlib_ng.enable_zlib_ng()
+```
 
 ## Contributors ✨
 
