@@ -32,6 +32,3 @@ def disable_zlib_ng() -> None:
     for location in TARGETS:
         if module := getattr(aiohttp, location, None):
             module.zlib = zlib_original
-
-
-enable_zlib_ng()
