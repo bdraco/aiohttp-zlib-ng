@@ -45,14 +45,14 @@ Install this via pip (or your favourite package manager):
 
 ## Usage
 
-Importing the module is enough to enable [zlib-ng](https://github.com/pycompression/python-zlib-ng) support in aiohttp.
+Enable [zlib-ng](https://github.com/pycompression/python-zlib-ng) support in aiohttp by calling `enable_zlib_ng`
 
 ```python
 
 import aiohttp_zlib_ng
 
-aiohttp_zlib_ng.disable_zlib_ng()
 aiohttp_zlib_ng.enable_zlib_ng()
+aiohttp_zlib_ng.disable_zlib_ng()
 ```
 
 ## Contributors ✨
