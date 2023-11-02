@@ -11,6 +11,7 @@ TARGETS = (
     "http_writer",
     "http_websocket",
     "http_writer",
+    "http_parser",
     "multipart",
     "web_response",
 )
