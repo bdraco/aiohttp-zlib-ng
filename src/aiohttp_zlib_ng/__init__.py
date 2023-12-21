@@ -16,9 +16,20 @@ TARGETS = (
     "web_response",
 )
 
+try:
+    from cpufeature import CPUFeature
+except ImportError:
+    CPUFeature = None
+
+DISABLED = False
+if CPUFeature and "AVX" not in CPUFeature:
+    DISABLED = True
+
 
 def enable_zlib_ng() -> None:
     """Enable zlib-ng."""
+    if DISABLED:
+        return
     for location in TARGETS:
         try:
             importlib.import_module(f"aiohttp.{location}")
@@ -30,6 +41,8 @@ def enable_zlib_ng() -> None:
 
 def disable_zlib_ng() -> None:
     """Disable zlib-ng and restore the original zlib."""
+    if DISABLED:
+        return
     for location in TARGETS:
         if module := getattr(aiohttp, location, None):
             module.zlib = zlib_original
