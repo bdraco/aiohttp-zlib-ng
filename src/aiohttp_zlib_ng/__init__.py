@@ -21,9 +21,7 @@ try:
 except ImportError:
     CPUFeature = None
 
-DISABLED = False
-if CPUFeature and "AVX" not in CPUFeature:
-    DISABLED = True
+DISABLED = bool(CPUFeature and not CPUFeature.get("AVX"))
 
 
 def enable_zlib_ng() -> None:
