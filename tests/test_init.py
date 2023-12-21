@@ -15,3 +15,15 @@ def test_enable_disable():
     assert aiohttp.http_websocket.zlib is zlib_original
     enable_zlib_ng()
     assert aiohttp.http_websocket.zlib is zlib_ng
+
+
+def test_disabled_if_no_avx():
+    """Test disabled if no AVX."""
+    assert aiohttp.http_websocket.zlib is zlib_original
+    assert aiohttp.http_websocket.zlib is zlib_original
+    enable_zlib_ng()
+    assert aiohttp.http_websocket.zlib is zlib_original
+    disable_zlib_ng()
+    assert aiohttp.http_websocket.zlib is zlib_original
+    enable_zlib_ng()
+    assert aiohttp.http_websocket.zlib is zlib_original

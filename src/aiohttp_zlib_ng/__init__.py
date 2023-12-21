@@ -1,7 +1,9 @@
 __version__ = "0.0.0"
 
 import importlib
+import platform
 import zlib as zlib_original
+from typing import Any
 
 import aiohttp
 from zlib_ng import zlib_ng as zlib_ng
@@ -16,17 +18,33 @@ TARGETS = (
     "web_response",
 )
 
-try:
-    from cpufeature import CPUFeature
-except ImportError:
-    CPUFeature = None
+CPUFeature: dict[str, Any] | None = None
 
-DISABLED = bool(CPUFeature and not CPUFeature.get("AVX"))
+try:
+    from cpufeature import CPUFeature  # type: ignore[no-redef]
+except ImportError:
+    pass
+
+
+def has_missing_avx_flag_on_x86_64() -> bool:
+    """
+    Return True if AVX is supported or not x86_64.
+
+    This is a workaround to disable zlib-ng on x86_64 if AVX is not supported
+    on older CPUs until https://github.com/pycompression/python-zlib-ng/pull/15
+    is merged and released.
+
+    See
+    https://github.com/home-assistant/core/issues/105254
+    """
+    if platform.machine() != "x86_64":
+        return False
+    return bool(CPUFeature and not CPUFeature.get("AVX"))
 
 
 def enable_zlib_ng() -> None:
     """Enable zlib-ng."""
-    if DISABLED:
+    if has_missing_avx_flag_on_x86_64():
         return
     for location in TARGETS:
         try:
@@ -39,7 +57,7 @@ def enable_zlib_ng() -> None:
 
 def disable_zlib_ng() -> None:
     """Disable zlib-ng and restore the original zlib."""
-    if DISABLED:
+    if has_missing_avx_flag_on_x86_64():
         return
     for location in TARGETS:
         if module := getattr(aiohttp, location, None):
