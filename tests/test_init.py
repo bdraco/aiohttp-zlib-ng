@@ -17,6 +17,7 @@ def test_enable_disable():
     assert aiohttp.http_websocket.zlib is zlib_original
     enable_zlib_ng()
     assert aiohttp.http_websocket.zlib is zlib_ng
+    disable_zlib_ng()
 
 
 def test_disabled_if_no_avx():
