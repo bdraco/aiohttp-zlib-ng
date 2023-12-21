@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.1.2 (2023-12-21)
+
+### Fix
+
+- Disable library if avx is missing (#4) ([`f841cee`](https://github.com/bdraco/aiohttp-zlib-ng/commit/f841ceee40b7f23a97e38978af878ae499163ad3))
+
 ## v0.1.1 (2023-11-02)
 
 ### Fix
