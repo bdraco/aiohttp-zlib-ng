@@ -4,7 +4,7 @@ import importlib
 import logging
 import platform
 import zlib as zlib_original
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 
 import aiohttp
 from zlib_ng import zlib_ng as zlib_ng
@@ -21,7 +21,7 @@ TARGETS = (
     "web_response",
 )
 
-CPUFeature: Dict[str, Any] | None = None
+CPUFeature: Optional[Dict[str, Any]] = None
 
 if platform.machine() == "x86_64":
     try:
