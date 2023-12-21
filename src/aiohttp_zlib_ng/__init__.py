@@ -20,10 +20,11 @@ TARGETS = (
 
 CPUFeature: dict[str, Any] | None = None
 
-try:
-    from cpufeature import CPUFeature  # type: ignore[no-redef]
-except ImportError:
-    pass
+if platform.machine() == "x86_64":
+    try:
+        from cpufeature import CPUFeature  # type: ignore[no-redef]
+    except ImportError:
+        pass
 
 
 def has_missing_avx_flag_on_x86_64() -> bool:
@@ -37,8 +38,6 @@ def has_missing_avx_flag_on_x86_64() -> bool:
     See
     https://github.com/home-assistant/core/issues/105254
     """
-    if platform.machine() != "x86_64":
-        return False
     return bool(CPUFeature and not CPUFeature.get("AVX"))
 
 
