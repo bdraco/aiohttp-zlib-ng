@@ -24,8 +24,7 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.8"
 aiohttp = ">=3.8.5"
-zlib-ng = ">=0.2.0"
-cpufeature = {version = ">=0.2.1", markers = "platform_machine == \"x86_64\""}
+zlib-ng = ">=0.3.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.0"
