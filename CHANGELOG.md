@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.1.3 (2023-12-27)
+
+### Fix
+
+- Revert disable if no avx check in favor of new zlib_ng (#5) ([`ebe8353`](https://github.com/bdraco/aiohttp-zlib-ng/commit/ebe8353221d8dca0ba03400b39b06a15b614d81a))
+
 ## v0.1.2 (2023-12-21)
 
 ### Fix
