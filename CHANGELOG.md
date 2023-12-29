@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.2.0 (2023-12-29)
+
+### Feature
+
+- Use faster isal when available (#6) ([`ecdaf7d`](https://github.com/bdraco/aiohttp-zlib-ng/commit/ecdaf7d37a94c14cf9ef405bd531ec1d767a9bcb))
+
 ## v0.1.3 (2023-12-27)
 
 ### Fix

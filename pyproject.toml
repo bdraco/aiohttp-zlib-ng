@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "aiohttp-zlib-ng"
-version = "0.1.3"
+version = "0.2.0"
 description = "Enable zlib_ng on aiohttp"
 authors = ["J. Nick Koston <nick@koston.org>"]
 license = "Apache Software License 2.0"
