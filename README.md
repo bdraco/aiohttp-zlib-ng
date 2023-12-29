@@ -37,6 +37,9 @@ Enable zlib_ng on aiohttp
 
 zlib is be a bottleneck for aiohttp, especially for websocket connections. `aiohttp-zlib-ng` replaces usage of `zlib` in `aiohttp` with `zlib-ng` which is a drop-in faster replacement.
 
+If `isal` is available, this library will try to use `isal`, and will fallback to the slower
+`zlib_ng` if it is not available.
+
 ## Installation
 
 Install this via pip (or your favourite package manager):
