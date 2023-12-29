@@ -80,6 +80,7 @@ jobs:
         shell: alpine.sh --root {0}
       - name: Install Dependencies
         run: |
+          poetry remove isal # Remove isal because it doesn't support 32-bit
           poetry -vvv install --only=main,dev
         shell: alpine.sh --root {0}
       - name: Test with Pytest
