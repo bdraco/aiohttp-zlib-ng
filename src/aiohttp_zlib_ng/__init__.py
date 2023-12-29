@@ -6,6 +6,14 @@ import zlib as zlib_original
 import aiohttp
 from zlib_ng import zlib_ng as zlib_ng
 
+try:
+    from isal import isal_zlib
+
+    best_zlib = isal_zlib
+except ImportError:
+    isal_zlib = None
+    best_zlib = zlib_ng
+
 TARGETS = (
     "compression_utils",
     "http_writer",
@@ -25,7 +33,7 @@ def enable_zlib_ng() -> None:
         except ImportError:
             continue
         if module := getattr(aiohttp, location, None):
-            module.zlib = zlib_ng
+            module.zlib = best_zlib
 
 
 def disable_zlib_ng() -> None:
