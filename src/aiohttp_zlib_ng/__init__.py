@@ -4,15 +4,12 @@ import importlib
 import zlib as zlib_original
 
 import aiohttp
-from zlib_ng import zlib_ng as zlib_ng
 
 try:
-    from isal import isal_zlib
-
-    best_zlib = isal_zlib
+    from isal import isal_zlib as best_zlib
 except ImportError:
-    isal_zlib = None
-    best_zlib = zlib_ng
+    from zlib_ng import zlib_ng as best_zlib
+
 
 TARGETS = (
     "compression_utils",
