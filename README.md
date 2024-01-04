@@ -42,9 +42,13 @@ If `isal` is available, this library will try to use `isal`, and will fallback t
 
 ## Installation
 
-Install this via pip (or your favourite package manager):
+Install this via pip (or your favorite package manager):
 
 `pip install aiohttp-zlib-ng`
+
+To install the optional `isal` speed up:
+
+`pip install aiohttp-zlib-ng[isal]`
 
 ## Usage
 
