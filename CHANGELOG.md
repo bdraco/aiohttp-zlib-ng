@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.3.0 (2024-01-04)
+
+### Feature
+
+- Make isal optional and installed only as an extra (#7) ([`0b5754b`](https://github.com/bdraco/aiohttp-zlib-ng/commit/0b5754b7a3a151b20d252e32c8ddc77a1c6b09d5))
+
 ## v0.2.0 (2023-12-29)
 
 ### Feature
