@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.3.1 (2024-01-08)
+
+### Fix
+
+- Suppress mypy errors on platforms where isal is not available (#8) ([`f838c20`](https://github.com/bdraco/aiohttp-zlib-ng/commit/f838c20847f323584379ce1d1523be6501b7503b))
+
 ## v0.3.0 (2024-01-04)
 
 ### Feature
