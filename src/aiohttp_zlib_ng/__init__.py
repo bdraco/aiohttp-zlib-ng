@@ -2,11 +2,17 @@ __version__ = "0.0.0"
 
 import importlib
 import zlib as zlib_original
+from typing import TYPE_CHECKING
 
 import aiohttp
 
+if TYPE_CHECKING:
+    from zlib_ng import zlib_ng as best_zlib
+
 try:
-    from isal import isal_zlib as best_zlib
+    from isal import (  # type: ignore
+        isal_zlib as best_zlib,
+    )
 except ImportError:
     from zlib_ng import zlib_ng as best_zlib
 
