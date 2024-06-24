@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "aiohttp-zlib-ng"
-version = "0.3.1"
+version = "0.3.2"
 description = "Enable zlib_ng on aiohttp"
 authors = ["J. Nick Koston <nick@koston.org>"]
 readme = "README.md"

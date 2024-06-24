@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.3.2 (2024-06-24)
+
+### Fix
+
+- Fix license classifier (#9) ([`c3eb1bc`](https://github.com/bdraco/aiohttp-zlib-ng/commit/c3eb1bcdbea1ebfe25be845a2db85ae362708cea))
+
 ## v0.3.1 (2024-01-08)
 
 ### Fix
