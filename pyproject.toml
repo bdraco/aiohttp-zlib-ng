@@ -3,7 +3,6 @@ name = "aiohttp-zlib-ng"
 version = "0.3.1"
 description = "Enable zlib_ng on aiohttp"
 authors = ["J. Nick Koston <nick@koston.org>"]
-license = "Apache Software License 2.0"
 readme = "README.md"
 repository = "https://github.com/bdraco/aiohttp-zlib-ng"
 classifiers = [
@@ -12,6 +11,7 @@ classifiers = [
     "Natural Language :: English",
     "Operating System :: OS Independent",
     "Topic :: Software Development :: Libraries",
+    "License :: OSI Approved :: Apache Software License",
 ]
 packages = [
     { include = "aiohttp_zlib_ng", from = "src" },
