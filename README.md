@@ -33,6 +33,8 @@
 
 ---
 
+# This library is obsolete and replaced by https://github.com/bdraco/aiohttp-fast-zlib
+
 Enable zlib_ng on aiohttp
 
 zlib is be a bottleneck for aiohttp, especially for websocket connections. `aiohttp-zlib-ng` replaces usage of `zlib` in `aiohttp` with `zlib-ng` which is a drop-in faster replacement.
